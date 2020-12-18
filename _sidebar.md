@@ -1,4 +1,4 @@
 - API
   - [IoT API](api/open/iot.md)
-- CONCEPT
-  - [IoT Concept](concept/iot.md)
+- 概念
+  - [IoT CONCEPT](concept/iot.md)

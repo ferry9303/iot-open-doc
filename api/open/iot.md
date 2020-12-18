@@ -144,12 +144,12 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
 | feature               | [设备特性](concept/iot.md?id=Device.feature) |
 | status                | [设备当前状态](concept/iot.md?id=Device.status) |
 | online                | 设备在线情况（true 在线，false 掉线）  |
-｜ modes                | 设备模式列表                         ｜
-｜ modes[0].preset      | 预设模式                            |
-｜ modes[0].name        | 模式名                              |
-｜ modes[0].value       | 模式单价                            |
-｜ modes[0].unit        | 模式单位                            |
-｜ modes[0].description | 模式描述                            |
+| modes                | 设备模式列表                         |
+| modes[0].preset      | 预设模式                            |
+| modes[0].name        | 模式名                              |
+| modes[0].value       | 模式单价                            |
+| modes[0].unit        | 模式单位                            |
+| modes[0].description | 模式描述                            |
 
 **示例：**
 
@@ -242,9 +242,9 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 | objects[0].id         | 设备占用 id                        |
 | objects[0].serial     | 设备编号                           |
 | objects[0].status     | [占用状态](concept/iot.md?id=Occupation.status) |
-| objects[0].created_at | 创建时间。格式为 ISO8601。以苏打平台系统时间为准。   ｜
-| objects[0].status_at  | 占用开始时间。格式为 ISO8601。以苏打平台系统时间为准。｜
-| objects[0].end_at     | 占用结束时间。格式为 ISO8601。以苏打平台系统时间为准。｜
+| objects[0].created_at | 创建时间。格式为 ISO8601。以苏打平台系统时间为准。   |
+| objects[0].status_at  | 占用开始时间。格式为 ISO8601。以苏打平台系统时间为准。|
+| objects[0].end_at     | 占用结束时间。格式为 ISO8601。以苏打平台系统时间为准。|
 | pagination.from       | 分页起始位                          |
 | pagination.to         | 分页结束位                          |
 | pagination.total      | 总数                               |
@@ -294,10 +294,10 @@ curl ttps://open.sodalife.xyz/iot/devices/SD66790830/occupation/?access_token=d8
 
 | 参数                  | 说明          | 是否必填                    |
 | --------------------- | ------------- | ------------------------ |
-｜ serial               | 设备编号       | 必填
+| serial               | 设备编号       | 必填
 | user_id               | 应用用户 id     | 必填（user_id 或 mobile 二选一）    |
 | mobile                | 用户手机号      | 否 (iot:premier 权限可用) |
-| start_at       | 开始时间。格式为 ISO8601。以苏打平台系统时间为准。      | 必填                    ｜
+| start_at       | 开始时间。格式为 ISO8601。以苏打平台系统时间为准。      | 必填                    |
 | end_at         | 结束时间。格式为 ISO8601。以苏打平台系统时间为准。      | 必填                     |
 
 **授权范围：**
@@ -324,8 +324,8 @@ curl ttps://open.sodalife.xyz/iot/devices/SD66790830/occupation/?access_token=d8
 | 参数                   | 说明                              |
 | --------------------- | --------------------------------- |
 | id                    | 占用设备 ID，最大长度 64 字节         |
-｜ serial               ｜ 设备编号                           |
-| status                | [占用状态](concept/iot.md?id=Occupation.status)  ｜
+| serial               | 设备编号                           |
+| status                | [占用状态](concept/iot.md?id=Occupation.status)  |
 | created_at           | 创建时间。格式为 ISO8601。以苏打平台系统时间为准。      |
 
 **示例：**
@@ -398,7 +398,7 @@ curl -X POST \
 | 参数                   | 说明                              |
 | --------------------- | --------------------------------- |
 | id                    | 占用设备 ID，最大长度 64 字节         |
-｜ serial               ｜ 设备编号                           |
+| serial               | 设备编号                           |
 | status                | [占用状态](concept/iot.md?id=Occupation.status)  |
 | created_at           | 创建时间。格式为 ISO8601。以苏打平台系统时间为准。      |
 | released_at           | 取消占用时间。格式为 ISO8601。以苏打平台系统时间为准。  |
