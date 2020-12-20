@@ -42,7 +42,7 @@
   }
   ```
 
-- 异常时，接口将返回 [异常 JSON 数据](http://docs.open.sodalife.cc/#/api/error)
+- 异常时，接口将返回 [异常 JSON 数据](https://docs-open.sodalife.cc/#/api/error)
 
 **返回参数：**
 
@@ -134,7 +134,7 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
   }
   ```
 
-- 异常时，接口将返回 [异常 JSON 数据](http://docs.open.sodalife.cc/#/api/error)
+- 异常时，接口将返回 [异常 JSON 数据](https://docs-open.sodalife.cc/#/api/error)
 
 **返回参数：**
 
@@ -233,7 +233,7 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
   }
   ```
 
-- 异常时，接口将返回 [异常 JSON 数据](http://docs.open.sodalife.cc/#/api/error)
+- 异常时，接口将返回 [异常 JSON 数据](https://docs-open.sodalife.cc/#/api/error)
 
 **返回参数：**
 
@@ -317,7 +317,7 @@ curl ttps://open.sodalife.xyz/iot/devices/SD66790830/occupation/?access_token=d8
   }
   ```
 
-- 异常时，接口将返回 [异常 JSON 数据](http://docs.open.sodalife.cc/#/api/error)
+- 异常时，接口将返回 [异常 JSON 数据](https://docs-open.sodalife.cc/#/api/error)
 
 **返回参数：**
 
@@ -391,7 +391,7 @@ curl -X POST \
   }
   ```
 
-- 异常时，接口将返回 [异常 JSON 数据](http://docs.open.sodalife.cc/#/api/error)
+- 异常时，接口将返回 [异常 JSON 数据](https://docs-open.sodalife.cc/#/api/error)
 
 **返回参数：**
 
