@@ -12,8 +12,8 @@
 
 | 设备状态值           | 说明               |
 |------------------- | -------------------|
-| AVAILABLE          | 可使用的           |
-| USING              | 正在使用中          |
+| AVAILABLE          | 可使用             |
+| USING              | 使用中             |
 | ABNORMAL           | 异常               |
 | LOCKED             | 锁定               |
 | OCCUPIED           | 占用               |

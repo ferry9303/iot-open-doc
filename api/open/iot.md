@@ -20,7 +20,7 @@
 
     iot:public
 
-**返回: ***
+**返回：**
 
 - 正常时，接口将返回以下 JSON 数据：
 
@@ -105,7 +105,7 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
 
     iot:public
 
-**返回: ***
+**返回：**
 
 - 正常时，接口将返回以下 JSON 数据：
 
@@ -117,16 +117,14 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
       {
         "preset": "DRINKING_HOT",
         "name": "热水",
-        "value": 15,
-        "unit": "升",
-        "description": "",
+        "value": 0.40,
+        "unit": "升"
       },
       {
         "preset": "DRINKING_COLD",
         "name": "常温水",
-        "value": 15,
-        "unit": "升",
-        "description": "",
+        "value": 0.30,
+        "unit": "升"
       }
     ],
     "online": true,
@@ -147,7 +145,7 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
 | modes                | 设备模式列表                         |
 | modes[0].preset      | 预设模式                            |
 | modes[0].name        | 模式名                              |
-| modes[0].value       | 模式单价                            |
+| modes[0].value       | 模式单价，单位：元                    |
 | modes[0].unit        | 模式单位                            |
 | modes[0].description | 模式描述                            |
 
@@ -209,7 +207,7 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 
     iot:control
 
-**返回: ***
+**返回：**
 
 - 正常时，接口将返回以下 JSON 数据：
 
@@ -274,7 +272,7 @@ curl ttps://open.sodalife.xyz/iot/devices/SD66790830/occupation/?access_token=d8
 #   }
 ```
 
-### 占用设备
+### 请求占用设备
 
 **URI:**
 
@@ -304,7 +302,7 @@ curl ttps://open.sodalife.xyz/iot/devices/SD66790830/occupation/?access_token=d8
 
     iot:control
 
-**返回: ***
+**返回：**
 
 - 正常时，接口将返回以下 JSON 数据：
 
@@ -377,7 +375,7 @@ curl -X POST \
 
     iot:control
 
-**返回: ***
+**返回：**
 
 - 正常时，接口将返回以下 JSON 数据：
 
