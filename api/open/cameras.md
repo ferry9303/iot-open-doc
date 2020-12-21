@@ -1,7 +1,7 @@
 ## 视频API
 接口说明
 - 1.平台已经添加过设备信息，正常使用实时预览功能前需要关闭对应设备端视频加密配置选项。
-- 2.调用所有接口需要先获取accessToken凭证，具体参考[获取凭证](https://docs-open.sodalife.cc/#/guide/auth)
+- 2.调用所有接口需要先获取access_token凭证，具体参考[获取凭证](https://docs-open.sodalife.cc/#/guide/auth)
 - 3.单台设备相关接口调用频率间隔建议间隔4秒以上，避免频繁调用。
 
 ### 拍照
@@ -19,14 +19,14 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|accessToken|string|true|授权凭证|
-|deviceSerial|string|true|设备编号|
+|access_token|string|true|授权凭证|
+|device_serial|string|true|设备编号|
 
 请求参数示例
 ```json
 {
-    "accessToken":"ks0a9asfa9yaanfsahj9fa",
-    "deviceSerial": "TEST0001"
+    "access_token":"ks0a9asfa9yaanfsahj9fa",
+    "device_serial": "TEST0001"
 }
 ```
 
@@ -58,8 +58,8 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|accessToken|string|true|授权凭证|
-|deviceSerial|string|true|设备编号|
+|access_token|string|true|授权凭证|
+|device_serial|string|true|设备编号|
 |action|integer|true|0-开始 ，1-停止|
 |command|string|true|8-放大，9-缩小，10-近焦距，11-远焦距|
 
@@ -68,8 +68,8 @@
 请求参数示例
 ```json
 {
-    "accessToken":"ks0a9asfa9yaanfsahj9fa",
-    "deviceSerial": "TEST0001",
+    "access_token":"ks0a9asfa9yaanfsahj9fa",
+    "device_serial": "TEST0001",
     "action": 1,
     "command": "8"
 }
@@ -104,9 +104,9 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|accessToken|string|true|授权凭证|
-|deviceSerial|string|true|设备编号|
-|voiceFile|file|true|音频文件|
+|access_token|string|true|授权凭证|
+|device_serial|string|true|设备编号|
+|voice_file|file|true|音频文件|
 
 返回参数
 
@@ -136,16 +136,16 @@
 
 |参数|类型|是否必须|描述|
 |---|---|---|---|
-|accessToken|string|true|授权凭证|
-|deviceSerial|string|true|设备唯一标识|
+|access_token|string|true|授权凭证|
+|device_serial|string|true|设备唯一标识|
 |protocol|string|false|支持hls、ezopen两种协议地址，默认hls|
 
 请求参数示例
 
 ```json
 {
-    "accessToken":"ks0a9asfa9yaanfsahj9fa",
-    "deviceSerial": "748d84750e3a4a5bbad3cd4af9ed5101",
+    "access_token":"ks0a9asfa9yaanfsahj9fa",
+    "device_serial": "748d84750e3a4a5bbad3cd4af9ed5101",
     "protocol": "hls"
 }
 ```
@@ -209,14 +209,14 @@
 |异常机器码(error)|异常描述(error_description)|消除建议|
 |---|---|---|
 |10001|参数错误|参数为空或格式不正确|
-|10002|accessToken异常或过期|重新获取accessToken|
+|10002|access_token异常或过期|重新获取access_token|
 |10005|appKey异常|appKey被冻结|
 |10051|无权限进行抓图|设备不属于当前用户或者未分享给当前用户|
 |20002|设备不存在||
 |20006|网络异常|检查设备网络状况，稍后再试|
 |20007|设备不在线|检查设备是否在线|
 |20008|设备响应超时|操作过于频繁或者设备不支持萤石协议抓拍|
-|20014|deviceSerial不合法||
+|20014|device_serial不合法||
 |49999|数据异常|接口调用异常|
 |60017|设备抓图失败|设备返回失败|
 |60020|不支持该命令|确认设备是否支持抓图|
