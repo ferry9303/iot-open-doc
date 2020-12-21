@@ -1,4 +1,5 @@
 - API
   - [IoT API](api/open/iot.md)
+  - [Cameras](api/open/cameras.md)
 - 概念
   - [IoT CONCEPT](concept/iot.md)
