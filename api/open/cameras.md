@@ -10,7 +10,7 @@
 > 该接口用于手动触发设备拍照，返回图片的地址，拍照时间为触发手动命令的时间。
 
 接口地址
-> POST /iot/cameras/capture
+> POST /iot/cameras/capture?access_token=ks0a9asfa9yaanfsahj9fa
 
 数据提交方式
 > application/json
@@ -19,13 +19,11 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|access_token|string|true|授权凭证|
 |device_serial|string|true|设备编号|
 
 请求参数示例
 ```json
 {
-    "access_token":"ks0a9asfa9yaanfsahj9fa",
     "device_serial": "TEST0001"
 }
 ```
@@ -49,7 +47,7 @@
 > 根据设备编号进行云台操作控制，开始云台控制之后必须先调用停止云台控制才能进行其他操作
 
 接口地址
-> POST /iot/cameras/controlling
+> POST /iot/cameras/controlling?access_token=ks0a9asfa9yaanfsahj9fa
 
 数据提交方式
 > application/json
@@ -58,7 +56,6 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|access_token|string|true|授权凭证|
 |device_serial|string|true|设备编号|
 |action|integer|true|0-开始 ，1-停止|
 |command|string|true|8-放大，9-缩小，10-近焦距，11-远焦距|
@@ -68,7 +65,6 @@
 请求参数示例
 ```json
 {
-    "access_token":"ks0a9asfa9yaanfsahj9fa",
     "device_serial": "TEST0001",
     "action": 1,
     "command": "8"
@@ -95,7 +91,7 @@
 > 下发自定义语音到设备，音频文件支持wav、mp3、aac格式，最大20M。
 
 接口地址
-> POST /iot/cameras/sendvoice
+> POST /iot/cameras/sendvoice?access_token=ks0a9asfa9yaanfsahj9fa
 
 数据提交方式
 > multipart/form-data
@@ -104,7 +100,6 @@
 
 |参数|数据类型|是否必须|描述|
 |---|---|---|---|
-|access_token|string|true|授权凭证|
 |device_serial|string|true|设备编号|
 |voice_file|file|true|音频文件|
 
@@ -127,7 +122,7 @@
 > 获取设备的直播地址信息，H5视频插件接入直播地址可参考:[UIKit Javascript](http://open.ys7.com/doc/zh/uikit/uikit_javascript.html)
 
 接口地址
-> POST /iot/cameras/liveurl
+> POST /iot/cameras/liveurl?access_token=ks0a9asfa9yaanfsahj9fa
 
 数据提交方式
 > applicatiion/json
@@ -136,7 +131,6 @@
 
 |参数|类型|是否必须|描述|
 |---|---|---|---|
-|access_token|string|true|授权凭证|
 |device_serial|string|true|设备唯一标识|
 |protocol|string|false|支持hls、ezopen两种协议地址，默认hls|
 
@@ -144,7 +138,6 @@
 
 ```json
 {
-    "access_token":"ks0a9asfa9yaanfsahj9fa",
     "device_serial": "748d84750e3a4a5bbad3cd4af9ed5101",
     "protocol": "hls"
 }
