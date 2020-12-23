@@ -119,7 +119,7 @@
 ### 直播地址
 
 接口说明
-> 获取设备的直播地址信息，H5视频插件接入直播地址可参考:[UIKit Javascript](http://open.ys7.com/doc/zh/uikit/uikit_javascript.html)
+> 获取设备的直播地址信息
 
 接口地址
 > POST /iot/cameras/liveurl?access_token=ks0a9asfa9yaanfsahj9fa
@@ -132,7 +132,7 @@
 |参数|类型|是否必须|描述|
 |---|---|---|---|
 |device_serial|string|true|设备唯一标识|
-|protocol|string|false|支持hls、ezopen两种协议地址，默认hls|
+|protocol|string|true|支持ezopen、ezopenhd、hls、hlshd、rtmp、rtmphd、flv、flvhd，不区分大小写，hd后缀为高清模式|
 
 请求参数示例
 
@@ -154,6 +154,50 @@
 {
     "url": "http://hls.open.ys7.com/openlive/dasd8a8f8da8fsa87s7s.hd.m3u8"
 }
+```
+
+ezopen格式嵌入示例
+```html
+<iframe
+  src="https://open.ys7.com/ezopen/h5/iframe?url=ezopen://open.ys7.com/E88638491/1.live"
+  width="600"
+  height="400"
+  id="test-device"
+  allowfullscreen
+>
+</iframe>
+```
+
+hls格式嵌入示例
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>播放hls格式视频</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script> 
+    <video id="video" width="600px;" height="600px;"></video>
+    <script>
+      //如果有对象
+      if(Hls.isSupported()) {
+        //video容器
+        var video = document.getElementById('video'); 
+        //初始化hls对象
+        var hls = new Hls(); 
+        //m3u8路径，放自己取到的地址
+        hls.loadSource('http://hls01open.ys7.com/openlive/87s82j22b4e849badaa2431b5a1fa098.m3u8'); 
+        //装载容器
+        hls.attachMedia(video);
+        //调用播放
+        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+          video.play(); 
+      });
+     }
+    </script>
+</body>
+</html>
 ```
 
 ## 注：异常
