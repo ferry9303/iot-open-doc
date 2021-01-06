@@ -1,5 +1,7 @@
 - API
-  - [IoT API](api/open/iot.md)
-  - [Cameras](api/open/cameras.md)
+  - [IoT 设备](api/open/devices.md)
+  - [设备占用](api/open/occupation.md)
+  - [设备所属商户](api/open/iot_merchants.md)
+  - [摄像头](api/open/cameras.md)
 - 概念
-  - [IoT CONCEPT](concept/iot.md)
+  - [IoT 概念](concept/iot.md)
