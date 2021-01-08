@@ -4,6 +4,43 @@
 - 2.调用所有接口需要先获取access_token凭证，具体参考[获取凭证](https://docs-open.sodalife.cc/#/guide/auth)
 - 3.单台设备相关接口调用频率间隔建议间隔4秒以上，避免频繁调用。
 
+### 在线状态
+
+接口说明
+> 该接口用于查询设备在线状态。
+
+接口地址
+> POST /iot/cameras/onlinestatus?access_token=ks0a9asfa9yaanfsahj9fa
+
+数据提交方式
+> application/json
+
+请求参数
+
+|参数|数据类型|是否必须|描述|
+|---|---|---|---|
+|device_serial|string|true|设备编号|
+
+请求参数示例
+```json
+{
+    "device_serial": "TEST0001"
+}
+```
+
+返回参数
+
+|参数|类型|描述|
+|---|---|---|
+|online|int|在线状态，0不在线，1在线|
+
+返回参数示例
+```json
+{
+    "online": 1
+}
+```
+
 ### 拍照
 
 接口说明
@@ -132,7 +169,7 @@
 |参数|类型|是否必须|描述|
 |---|---|---|---|
 |device_serial|string|true|设备唯一标识|
-|protocol|string|true|支持ezopen、ezopenhd、hls、hlshd、rtmp、rtmphd、flv、flvhd，不区分大小写，hd后缀为高清模式|
+|protocol|string|true|支持ezopen、ezopenhd、hls、hlshd、rtmp、rtmphd、flv、flvhd、rtsp(海康平台可用)，不区分大小写，hd后缀为高清模式|
 
 请求参数示例
 
@@ -198,6 +235,44 @@ hls格式嵌入示例
     </script>
 </body>
 </html>
+```
+
+### 语音对讲地址
+
+接口说明
+> 获取设备的语音对讲地址，为保证数据的安全性，取流URL设有有效时间，有效时间为5分钟。需要设备端支持此功能。
+
+接口地址
+> POST /iot/cameras/talkurl?access_token=ks0a9asfa9yaanfsahj9fa
+
+数据提交方式
+> applicatiion/json
+
+请求参数
+
+|参数|类型|是否必须|描述|
+|---|---|---|---|
+|device_serial|string|true|设备唯一标识|
+
+请求参数示例
+
+```json
+{
+    "device_serial": "748d84750e3a4a5bbad3cd4af9ed5101",
+}
+```
+
+返回参数
+
+|参数|类型|描述|
+|---|---|---|
+|url|string|对讲地址URL|
+
+返回参数示例
+```json
+{
+    "url": "rtsp://10.2.145.66:655/openUrl/CLJ52BW"
+}
 ```
 
 ## 注：异常
