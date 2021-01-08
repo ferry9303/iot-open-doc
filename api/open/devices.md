@@ -10,12 +10,12 @@
 
 **请求参数 Query:**
 
-| 参数         | 说明                                        | 是否必填            |
-|--------------|-------------------------------------------|--------------------|
-| access_token | 应用授权凭证                                | 必填                |
+| 参数         | 说明                                         | 是否必填            |
+|--------------|--------------------------------------------|--------------------|
+| access_token | 应用授权凭证                                 | 必填                |
 | merchant_id  | [iot 所属商户 id](api/open/iot_merchants.md) | 否                  |
-| limit        | 返回最多数量                                | 否，默认值/最大值 10 |
-| offset       | 列表起始位                                  | 否，默认 0           |
+| limit        | 返回最多数量                                 | 否，默认值/最大值 10 |
+| offset       | 列表起始位                                   | 否，默认 0           |
 
 **授权范围：**
 
@@ -32,6 +32,8 @@
         "serial": "SD66790830",
         "feature": "SHOWER",
         "status": "AVAILABLE",
+        "floor": 1,
+        "position_number": 2,
         "online": true
       }
     ],
@@ -47,15 +49,17 @@
 
 **返回参数：**
 
-| 参数               | 说明                                            |
-|--------------------|-----------------------------------------------|
-| objects[0].serial  | 设备编号                                        |
-| objects[0].feature | [设备特性](concept/iot.md?id=Device.feature)    |
-| objects[0].status  | [设备当前状态](concept/iot.md?id=Device.status) |
-| objects[0].online  | 设备在线情况（true 在线，false 掉线）              |
-| pagination.from    | 分页起始位                                      |
-| pagination.to      | 分页结束位                                      |
-| pagination.total   | 总数                                            |
+| 参数                       | 说明                                            |
+|----------------------------|-----------------------------------------------|
+| objects[0].serial          | 设备编号                                        |
+| objects[0].feature         | [设备特性](concept/iot.md?id=Device.feature)    |
+| objects[0].status          | [设备当前状态](concept/iot.md?id=Device.status) |
+| objects[0].online          | 设备在线情况（true 在线，false 掉线）              |
+| objects[0].floor           | 设备所在楼层                                    |
+| objects[0].position_number | 设备位置编号                                    |
+| pagination.from            | 分页起始位                                      |
+| pagination.to              | 分页结束位                                      |
+| pagination.total           | 总数                                            |
 
 **示例：**
 
@@ -69,6 +73,8 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
 #        "serial": "SD66790830",
 #        "feature": "SHOWER",
 #        "status": "AVAILABLE",
+#        "floor": 1,
+#        "position_number": 2,
 #        "online": true
 #      }
 #    ],
@@ -129,7 +135,9 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
       }
     ],
     "online": true,
-    "status": "AVAILABLE"
+    "status": "AVAILABLE",
+    "floor": 1,
+    "position_number": 2
   }
   ```
 
@@ -144,6 +152,8 @@ curl https://open.sodalife.xyz/iot/devices/?access_token=d86c828583c5c6160e8acfe
 | status               | [设备当前状态](concept/iot.md?id=Device.status) |
 | online               | 设备在线情况（true 在线，false 掉线）              |
 | modes                | 设备模式列表                                    |
+| floor                | 设备所在楼层                                    |
+| position_number      | 设备位置编号                                    |
 | modes[0].preset      | 预设模式                                        |
 | modes[0].name        | 模式名                                          |
 | modes[0].value       | 模式单价，单位：元                                |
@@ -176,6 +186,8 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 #     }
 #   ],
 #   "online": true,
-#   "status": "AVAILABLE"
+#   "status": "AVAILABLE",
+#    "floor": 1,
+#    "position_number": 2
 # }
 ```
