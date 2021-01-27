@@ -2,6 +2,7 @@
   - [IoT 设备](api/open/devices.md)
   - [设备占用](api/open/occupation.md)
   - [设备所属商户](api/open/iot_merchants.md)
+  - [联网设备激活](api/open/activation.md)
   - [摄像头](api/open/cameras.md)
 - 概念
   - [IoT 概念](concept/iot.md)
