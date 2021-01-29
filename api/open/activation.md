@@ -211,18 +211,20 @@ curl -X POST \
   {
     "id": "ACTIVATION_ID",
     "client_order_id": "xxx",
-    "modes": {
-      "preset": "DRINKING_HOT",
-      "name": "热水",
-      "value": 0.40,
-      "unit": "升",
-      "description": "",
-      "used": {
-        "amount": 1.20 ,
-        "flow_amount": 20,
-        "duration": 3600
+    "modes": [
+      {
+        "preset": "DRINKING_HOT",
+        "name": "热水",
+        "value": 0.40,
+        "unit": "升",
+        "description": "",
+        "used": {
+          "amount": 1.20 ,
+          "flow_amount": 20,
+          "duration": 3600
+        }
       }
-    },
+    ],
     "attachment": "",
     "actived_at": "2021-01-27T00:09:00+08:00",
     "terminated_at": "2021-01-27T00:10:10+08:00",
@@ -262,18 +264,20 @@ curl https://open.sodalife.xyz/iot/activation/query?access_token=d86c828583c5c61
 #  {
 #    "id": "202117115931093026",
 #    "client_order_id": "xxx",
-#    "modes": {
-#      "preset": "DRINKING_HOT",
-#      "name": "热水",
-#      "value": 0.40,
-#      "unit": "升",
-#      "description": "",
-#      "used": {
-#        "amount": 1.20 ,
-#        "flow_amount": 20,
-#        "duration": 3600
-#      }
-#    },
+#    "modes": [
+#      {
+#        "preset": "DRINKING_HOT",
+#        "name": "热水",
+#        "value": 0.40,
+#        "unit": "升",
+#        "description": "",
+#        "used": {
+#          "amount": 1.20 ,
+#          "flow_amount": 20,
+#          "duration": 3600
+#         }
+#       }
+#    ],
 #    "attachment": "",
 #    "actived_at": "2021-01-27T00:09:00+08:00",
 #    "terminated_at": "2021-01-27T00:10:10+08:00",
