@@ -79,7 +79,8 @@ curl -X POST \
   https://open.sodalife.xyz/iot/activation/?access_token=d86c828583c5c6160e8acfee88ba1590
 
 #  {
-#    "id": "202117115931093026"
+#    "id": "202117115931093026",
+#    "status": "WAITING"
 #  }
 ```
 
@@ -382,7 +383,7 @@ curl -X POST \
   ```json
   {
     "id": "ACTIVATION_ID",
-    "status": "TERMINATED"
+    "status": "ACTIVED"
   }
   ```
 
@@ -405,6 +406,6 @@ curl -X POST \
 
 #  {
 #    "id": "202117115931093026",
-#    "status": "TERMINATED"
+#    "status": "ACTIVED"
 #  }
 ```
