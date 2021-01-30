@@ -156,7 +156,7 @@ curl -X POST \
 | signed_request.iot_activation.modes[0].used             | object           | 该模式下的设备使用详情                   |
 | signed_request.iot_activation.modes[0].used.amount      | number (float)   | 已使用金额，单位：元                       |
 | signed_request.iot_activation.modes[0].used.flow_amount | number (float)   | 已使用流量，单位见 modes[0].unit 返回的值 |
-| signed_request.iot_activation.modes[0].used.duration    | number (float)   | 已使用时长，单位：秒                       |
+| signed_request.iot_activation.modes[0].used.duration    | number (int)     | 已使用时长，单位：秒                       |
 | signed_request.iot_activation.attachment                | string           | 激活设备的自定义附加数据                 |
 | signed_request.iot_activation.actived_at                | string (ISO8601) | 激活时间                                 |
 | signed_request.iot_activation.terminated_at             | string (ISO8601) | 终止时间                                 |
