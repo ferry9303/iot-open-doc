@@ -183,6 +183,29 @@ curl -X POST \
 | signed_request.iot_activation.actived_at           | string (ISO8601) | 激活时间                                       |
 | signed_request.iot_activation.status               | string (enum)    | 激活设备状态                                   |
 
+**回调通知示例：**
+测试 secret:
+
+```bash
+qvXxPd96cMZUzBTVnxt7b9QTrjtW5
+```
+
+Request:
+
+```http
+POST: ${webhook_url} 
+
+signed_request=xqaSkj78VQ5lax7qWQA5jtAQgbPZTQqJIcskTUn5i54.eyJldmVudCI6IklPVF9BQ1RJVkFUSU9OOlRFUk1JTkFURUQiLCJpb3RfYWN0aXZhdGlvbiI6eyJhY3RpdmVkX2F0IjoiMjAyMS0wMS0yN1QwMDowOTowMCswODowMCIsImF0dGFjaG1lbnQiOiIiLCJjbGllbnRfb3JkZXJfaWQiOiJ4eHgiLCJpZCI6IjIwMjExNzExNTkzMTA5MzAyNiIsIm1vZGVzIjpbeyJkZXNjcmlwdGlvbiI6IiIsIm5hbWUiOiLng63msLQiLCJwcmVzZXQiOiJEUklOS0lOR19IT1QiLCJ1bml0Ijoi5Y2HIiwidXNlZCI6eyJhbW91bnQiOjEuMiwiZHVyYXRpb24iOjM2MDAsImZsb3dfYW1vdW50IjoyMH0sInZhbHVlIjowLjR9XSwic3RhdHVzIjoiVEVSSU1BVEVEIiwidGVybWluYXRlZF9hdCI6IjIwMjEtMDEtMjdUMDA6MTA6MTArMDg6MDBkIn19
+```
+
+Response:
+
+```http
+HTTP/1.1 200 OK
+
+success
+```
+
 ### 查询联网设备激活详情
 
 **URI:**
