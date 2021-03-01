@@ -27,7 +27,7 @@
 | RELEASED        | 已释放   |
 | RELEASE_FAILURE | 释放失败 |
 
-### Activation.Status
+### Activation.status
 
 | 激活状态值       | 说明           |
 |------------------|--------------|
@@ -36,3 +36,9 @@
 | ACTIVE_FAILURE   | 激活失败       |
 | TERIMATED        | 终止（结算）成功 |
 | TERIMATE_FAILURE | 终止（结算）失败 |
+
+### Anomaly.status
+
+| 设备异常值 | 说明     |
+|------------|--------|
+| SOS        | SOS 报警 |
