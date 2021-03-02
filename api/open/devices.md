@@ -197,7 +197,7 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 
 ### 联网设备开关
 
-> 注：向联网设备发起开、关设备请求，区别于激活请求
+> 注：向联网设备发起开、关设备请求，设备端无状态，区别于激活请求
 
 **URI:**
 
@@ -215,9 +215,9 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 
 **请求参数 Body (JSON):**
 
-| 参数   | 说明                          | 是否必填 |
-|--------|-----------------------------|--------|
-| action | 设备开关动作（on 开启，off 关闭 | 必填     |
+| 参数   | 说明                           | 是否必填 |
+|--------|------------------------------|--------|
+| action | 设备开关动作（on 开启，off 关闭） | 必填     |
 
 **授权范围：**
 
@@ -237,9 +237,9 @@ curl https://open.sodalife.xyz/iot/devices/SD66790830?access_token=d86c828583c5c
 
 **返回参数：**
 
-| 参数   | 说明     |
-|--------|--------|
-| status | 操作成功 |
+| 参数   | 说明         |
+|--------|------------|
+| status | 操作是否成功 |
 
 **示例：**
 
@@ -290,10 +290,9 @@ curl -X POST \
 | signed_request.iot_anomaly.device.merchant_id     | string        | [iot 所属商户 id](api/open/iot_merchants.md)    |
 
 **回调通知示例：**
-测试 secret:
 
 ```bash
-qvXxPd96cMZUzBTVnxt7b9QTrjtW5
+测试 secret: qvXxPd96cMZUzBTVnxt7b9QTrjtW5
 ```
 
 Request:

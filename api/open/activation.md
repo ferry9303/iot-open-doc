@@ -184,10 +184,9 @@ curl -X POST \
 | signed_request.iot_activation.status               | string (enum)    | 激活设备状态                                   |
 
 **回调通知示例：**
-测试 secret:
 
 ```bash
-qvXxPd96cMZUzBTVnxt7b9QTrjtW5
+测试 secret: qvXxPd96cMZUzBTVnxt7b9QTrjtW5
 ```
 
 Request:
