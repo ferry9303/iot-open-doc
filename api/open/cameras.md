@@ -95,7 +95,7 @@
 |---|---|---|---|
 |device_serial|string|true|设备编号|
 |action|integer|true|0-开始 ，1-停止|
-|command|string|true|8-放大，9-缩小，10-近焦距，11-远焦距|
+|command|integer|true|8-放大，9-缩小，10-近焦距，11-远焦距，99-复位到预置点1|
 
 > 保留指令集：0-上，1-下，2-左，3-右，4-左上，5-左下，6-右上，7-右下
 
@@ -104,7 +104,7 @@
 {
     "device_serial": "TEST0001",
     "action": 1,
-    "command": "8"
+    "command": 8
 }
 ```
 
