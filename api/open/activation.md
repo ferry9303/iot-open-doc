@@ -88,53 +88,53 @@ curl -X POST \
 
 #### Webhook 激活事件
 
-| 事件标识                         | 描述                      |
-|----------------------------------|-------------------------|
-| IOT_ACTIVATION:ACTIVED           | 设备激活 - 激活成功       |
-| IOT_ACTIVATION:ACTIVE_FAILURE    | 设备激活 - 激活失败       |
-| IOT_ACTIVATION:TERMINATED        | 设备终止 - 已终止（结算）   |
-| IOT_ACTIVATION:TERMINATE_FAILURE | 设备终止 - 终止（结算）失败 |
+| 事件标识          | 描述                      |
+|-------------------|-------------------------|
+| ACTIVED           | 设备激活 - 激活成功       |
+| ACTIVE_FAILURE    | 设备激活 - 激活失败       |
+| TERIMATED        | 设备终止 - 已终止（结算）   |
+| TERIMATE_FAILURE | 设备终止 - 终止（结算）失败 |
 
 ##### 设备激活 - 激活成功
 
 **消息格式**
 
-| 参数                                               | 类型             | 含义                                 |
-|----------------------------------------------------|------------------|------------------------------------|
-| signed_request                                     | SignedRequest    | 已签名请求                           |
-| signed_request.event                               | string           | 事件，始终为 `IOT_ACTIVATION:ACTIVED` |
-| signed_request.iot_activation                      | object           | 设备激活详情                         |
-| signed_request.iot_activation.id                   | string           | 设备激活 ID                          |
-| signed_request.iot_activation.client_order_id      | string           | 应用内部的激活设备 ID                |
-| signed_request.iot_activation.modes                | array (object)   | 设备模式详情                         |
-| signed_request.iot_activation.modes[0].preset      | string           | 设备预设模式                         |
-| signed_request.iot_activation.modes[0].name        | string           | 模式名                               |
-| signed_request.iot_activation.modes[0].value       | number (float)   | 模式单价，单位：元                     |
-| signed_request.iot_activation.modes[0].unit        | string           | 模式单位                             |
-| signed_request.iot_activation.modes[0].description | string           | 模式描述                             |
-| signed_request.iot_activation.attachment           | string           | 激活设备的自定义附加数据             |
-| signed_request.iot_activation.actived_at           | string (ISO8601) | 激活时间                             |
-| signed_request.iot_activation.status               | string (enum)    | 激活设备状态                         |
+| 参数                                               | 类型             | 含义                     |
+|----------------------------------------------------|------------------|------------------------|
+| signed_request                                     | SignedRequest    | 已签名请求               |
+| signed_request.event                               | string           | 事件，始终为 `ACTIVED`    |
+| signed_request.iot_activation                      | object           | 设备激活详情             |
+| signed_request.iot_activation.id                   | string           | 设备激活 ID              |
+| signed_request.iot_activation.client_order_id      | string           | 应用内部的激活设备 ID    |
+| signed_request.iot_activation.modes                | array (object)   | 设备模式详情             |
+| signed_request.iot_activation.modes[0].preset      | string           | 设备预设模式             |
+| signed_request.iot_activation.modes[0].name        | string           | 模式名                   |
+| signed_request.iot_activation.modes[0].value       | number (float)   | 模式单价，单位：元         |
+| signed_request.iot_activation.modes[0].unit        | string           | 模式单位                 |
+| signed_request.iot_activation.modes[0].description | string           | 模式描述                 |
+| signed_request.iot_activation.attachment           | string           | 激活设备的自定义附加数据 |
+| signed_request.iot_activation.actived_at           | string (ISO8601) | 激活时间                 |
+| signed_request.iot_activation.status               | string (enum)    | 激活设备状态             |
 
 ##### 设备激活 - 激活失败
 
 **消息格式**
 
-| 参数                                               | 类型           | 含义                                        |
-|----------------------------------------------------|----------------|-------------------------------------------|
-| signed_request                                     | SignedRequest  | 已签名请求                                  |
-| signed_request.event                               | string         | 事件，始终为 `IOT_ACTIVATION:ACTIVE_FAILURE` |
-| signed_request.iot_activation                      | object         | 设备激活详情                                |
-| signed_request.iot_activation.id                   | string         | 设备激活 ID                                 |
-| signed_request.iot_activation.client_order_id      | string         | 应用内部的激活设备 ID                       |
-| signed_request.iot_activation.modes                | array (object) | 设备模式详情                                |
-| signed_request.iot_activation.modes[0].preset      | string         | 设备预设模式                                |
-| signed_request.iot_activation.modes[0].name        | string         | 模式名                                      |
-| signed_request.iot_activation.modes[0].value       | number (float) | 模式单价，单位：元                            |
-| signed_request.iot_activation.modes[0].unit        | string         | 模式单位                                    |
-| signed_request.iot_activation.modes[0].description | string         | 模式描述                                    |
-| signed_request.iot_activation.attachment           | string         | 激活设备的自定义附加数据                    |
-| signed_request.iot_activation.status               | string (enum)  | 激活设备状态                                |
+| 参数                                               | 类型           | 含义                         |
+|----------------------------------------------------|----------------|----------------------------|
+| signed_request                                     | SignedRequest  | 已签名请求                   |
+| signed_request.event                               | string         | 事件，始终为 `ACTIVE_FAILURE` |
+| signed_request.iot_activation                      | object         | 设备激活详情                 |
+| signed_request.iot_activation.id                   | string         | 设备激活 ID                  |
+| signed_request.iot_activation.client_order_id      | string         | 应用内部的激活设备 ID        |
+| signed_request.iot_activation.modes                | array (object) | 设备模式详情                 |
+| signed_request.iot_activation.modes[0].preset      | string         | 设备预设模式                 |
+| signed_request.iot_activation.modes[0].name        | string         | 模式名                       |
+| signed_request.iot_activation.modes[0].value       | number (float) | 模式单价，单位：元             |
+| signed_request.iot_activation.modes[0].unit        | string         | 模式单位                     |
+| signed_request.iot_activation.modes[0].description | string         | 模式描述                     |
+| signed_request.iot_activation.attachment           | string         | 激活设备的自定义附加数据     |
+| signed_request.iot_activation.status               | string (enum)  | 激活设备状态                 |
 
 ##### 设备终止 - 已终止（结算）
 
@@ -143,7 +143,7 @@ curl -X POST \
 | 参数                                                    | 类型             | 含义                                     |
 |---------------------------------------------------------|------------------|----------------------------------------|
 | signed_request                                          | SignedRequest    | 已签名请求                               |
-| signed_request.event                                    | string           | 事件，始终为 `IOT_ACTIVATION:TERMINATED`  |
+| signed_request.event                                    | string           | 事件，始终为 `TERIMATED`                 |
 | signed_request.iot_activation                           | object           | 设备激活详情                             |
 | signed_request.iot_activation.id                        | string           | 设备激活 ID                              |
 | signed_request.iot_activation.client_order_id           | string           | 应用内部的激活设备 ID                    |
@@ -166,22 +166,22 @@ curl -X POST \
 
 **消息格式**
 
-| 参数                                               | 类型             | 含义                                           |
-|----------------------------------------------------|------------------|----------------------------------------------|
-| signed_request                                     | SignedRequest    | 已签名请求                                     |
-| signed_request.event                               | string           | 事件，始终为 `IOT_ACTIVATION:TERMINATE_FAILURE` |
-| signed_request.iot_activation                      | object           | 设备激活详情                                   |
-| signed_request.iot_activation.id                   | string           | 设备激活 ID                                    |
-| signed_request.iot_activation.client_order_id      | string           | 应用内部的激活设备 ID                          |
-| signed_request.iot_activation.modes                | array (object)   | 设备模式详情                                   |
-| signed_request.iot_activation.modes[0].preset      | string           | 设备预设模式                                   |
-| signed_request.iot_activation.modes[0].name        | string           | 模式名                                         |
-| signed_request.iot_activation.modes[0].value       | number (float)   | 模式单价，单位：元                               |
-| signed_request.iot_activation.modes[0].unit        | string           | 模式单位                                       |
-| signed_request.iot_activation.modes[0].description | string           | 模式描述                                       |
-| signed_request.iot_activation.attachment           | string           | 激活设备的自定义附加数据                       |
-| signed_request.iot_activation.actived_at           | string (ISO8601) | 激活时间                                       |
-| signed_request.iot_activation.status               | string (enum)    | 激活设备状态                                   |
+| 参数                                               | 类型             | 含义                            |
+|----------------------------------------------------|------------------|-------------------------------|
+| signed_request                                     | SignedRequest    | 已签名请求                      |
+| signed_request.event                               | string           | 事件，始终为 `TERMINATE_FAILURE` |
+| signed_request.iot_activation                      | object           | 设备激活详情                    |
+| signed_request.iot_activation.id                   | string           | 设备激活 ID                     |
+| signed_request.iot_activation.client_order_id      | string           | 应用内部的激活设备 ID           |
+| signed_request.iot_activation.modes                | array (object)   | 设备模式详情                    |
+| signed_request.iot_activation.modes[0].preset      | string           | 设备预设模式                    |
+| signed_request.iot_activation.modes[0].name        | string           | 模式名                          |
+| signed_request.iot_activation.modes[0].value       | number (float)   | 模式单价，单位：元                |
+| signed_request.iot_activation.modes[0].unit        | string           | 模式单位                        |
+| signed_request.iot_activation.modes[0].description | string           | 模式描述                        |
+| signed_request.iot_activation.attachment           | string           | 激活设备的自定义附加数据        |
+| signed_request.iot_activation.actived_at           | string (ISO8601) | 激活时间                        |
+| signed_request.iot_activation.status               | string (enum)    | 激活设备状态                    |
 
 **回调通知示例：**
 
